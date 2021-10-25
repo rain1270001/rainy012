@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyy.boot14mybatis.dao.StudentMapper">
+    <resultMap id="studentMap" type="com.zyy.boot14mybatis.pojo.Student">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"></result>
+        <result property="age" column="age"></result>
+        <result property="birthday" column="birthday"></result>
+    </resultMap>
+
+    <insert id="insertStu">
+        insert into t_student(name, age, birthday) values (#{name},#{age},#{birthday})
+    </insert>
+
+    <select id="selectStudentById" parameterType="int" resultMap="studentMap">
+        select id,name,age,birthday from t_student where id=#{id}
+    </select>
+
+</mapper>

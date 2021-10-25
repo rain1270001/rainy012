@@ -1,0 +1,6 @@
+#用于提供数据,和properties文件起相同作用,
+#当两者同时存在时,优先调用.properties的文件内容,
+server:
+  port: 8090
+  servlet:
+    context-path: /myweb

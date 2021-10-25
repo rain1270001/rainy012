@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1>thymeleaf学习</h1><br/>
+    <h2>标志表达式</h2>
+    <h3>简单表达式</h3>
+    <p th:text="${name}">测试用表达式</p>
+    <p th:text="${value}">值</p>
+
+    <h3>对象类型</h3>
+    <p>对象类型使用${key.属性}或者${key.get***()}</p>
+    <p th:text="${book.id}">编号</p>
+    <p th:text="${book.name}">名称</p>
+    <p th:text="${book.price}">价格</p>
+
+    <h2>选择表达式</h2>
+    <div th:object="${book}">
+        <p th:text="*{id}"></p>
+        <p th:text="*{name}"></p>
+        <p th:text="*{price}"></p>
+    </div>
+
+    <h2>连接表达式@{url}</h2>
+    <a th:href="@{/query/user}">query/user有参数？id=10</a> <br/>
+    <a th:href="@{'/query/user?id='+${uid}}">query/user有参数？id=10</a> <br/>
+</div>
+
+</body>
+</html>
